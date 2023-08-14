@@ -13,9 +13,9 @@ const Home = () => {
         <>
             {/* job section  */}
             <div className='mt-14 flex justify-end gap-4'>
-                <button onClick={() => setActiveRoute('all')} className={`px-6 py-2 bg-white border shadow-md font-medium rounded-md ${activeRoute === 'all' && 'bg-green-600 text-white'} `} >All Jobs</button>
-                <button onClick={() => setActiveRoute('fresher')} className={`px-6 py-2 bg-white border shadow-md font-medium rounded-md ${activeRoute === 'fresher' && 'bg-green-600 text-white'} `} >Fresher Jobs</button>
-                <button onClick={() => setActiveRoute('experience')} className={`px-6 py-2 bg-white border shadow-md  font-medium rounded-md ${activeRoute === 'experience' && 'bg-green-600 text-white'} `}  >Experience Jobs</button>
+                <button onClick={()=> setActiveRoute('all')} className={`px-6 py-2 bg-white border shadow-md font-medium rounded-md ${activeRoute ==='all' ? 'bg-green-600 text-white':""} `} >All Jobs</button>
+                <button onClick={()=> setActiveRoute('fresher')} className={`px-6 py-2 bg-white border shadow-md font-medium rounded-md ${activeRoute ==='fresher' && 'bg-green-600 text-white'} `} >Fresher Jobs</button>
+                <button onClick={()=> setActiveRoute('experience')} className={`px-6 py-2 bg-white border shadow-md  font-medium rounded-md ${activeRoute ==='experience' && 'bg-green-600 text-white'} `}  >Experience Jobs</button>
             </div>
             <div>
                 {activeRoute === 'all' && (
