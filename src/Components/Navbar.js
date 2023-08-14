@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import { GiHamburgerMenu } from 'react-icons/gi'
 
 const Navbar = () => {
+    const [toggale, setToggle] = useState(false)
+
+
+
     return (
         <div>
             <nav className='container  mx-auto'>
@@ -14,6 +19,25 @@ const Navbar = () => {
                         <NavLink to='/about'>About Us</NavLink>
                         <NavLink to='/contact '>Contact Us</NavLink>
                         <NavLink to='/signin'>SignIn</NavLink>
+                    </div>
+                </div>
+                <div className='lg:hidden block'>
+                    <div>
+                        <GiHamburgerMenu onClick={()=>setToggle(!toggale)} size={24} color='green' className='hover:opacity-75 transition' />
+                    </div>
+                    <div className={`flex gap-4 flex-col duration-500 ease-linear  py-8  w-full bg-gray-700  z-50 items-center absolute ${ !toggale ? "top-[-300px] h-[0px]":'top-[0px] min-h-full' }`}>
+                        <div>
+                            <h2 className='text-2xl font-bold text-green-600'>Job Protal</h2>
+                        </div>
+                        <div className='absolute right-5'>
+                            <button onClick={()=>setToggle(false)} className='w-10 h-10 rounded-full bg-gray-900 shadow-md hover:opacity-75 transition text-white'> x</button>
+                        </div>
+                        <div className='flex flex-col text-black  gap-4'>
+                            <NavLink onClick={()=>setToggle(false)} className='hover:text-white duration-1000 transition hover:translate-x-2' to='/'>Home</NavLink>
+                            <NavLink onClick={()=>setToggle(false)} className='hover:text-white duration-1000 transition hover:translate-x-2' to='/about'>About Us</NavLink>
+                            <NavLink onClick={()=>setToggle(false)} className='hover:text-white duration-1000 transition hover:translate-x-2' to='/contact '>Contact Us</NavLink>
+                            <NavLink onClick={()=>setToggle(false)} className='hover:text-white duration-1000 transition hover:translate-x-2' to='/signin'>SignIn</NavLink>
+                        </div>
                     </div>
                 </div>
             </nav>
