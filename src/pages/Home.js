@@ -43,7 +43,7 @@ const Home = () => {
                 <div className='flex flex-col justify-center mt-5 top-4 lg:top-64 items-center relative '>
                     <p className='text-white'>Job portal is a side for find your drem job</p>
                     <p className='text-green-600 font-bold mt-4 text-2xl '>Connented With Us</p>
-                    <div className='flex mt-4  gap-4 '>
+                    <div className='flex mt-8  gap-4 '>
                         <SocialMediaLink />
                     </div>
                 </div>
@@ -143,7 +143,7 @@ const Home = () => {
 
                     <div className='flex xl:gap-12 md:gap-6 gap-4 mt-2 '>
                         <div className='lg:flex lg:flex-col hidden gap-4 '>
-                            
+
                             {/* social medial link for large device  */}
                            <SocialMediaLink />
                         </div>

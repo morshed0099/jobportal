@@ -20,6 +20,9 @@ code {
   animation: bgColor 2s ease-in infinite;
  
 }
+.active{
+  color: green;
+}
 
 @keyframes bgColor {
   0% {

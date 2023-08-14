@@ -1,0 +1,18 @@
+import React from 'react';
+
+const CompanyDetails = () => {
+    return (
+        <>        
+            <div className='container mx-auto mt-14'>
+              <h2 className='text-2xl font-bold mb-4 '>TITLE OF COMPANY</h2>
+              <p className='text-justify'>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium ducimus cupiditate aspernatur officiis laborum rem voluptatum maiores et error amet ad quaerat quod, repellendus enim distinctio. Voluptate explicabo praesentium modi officiis illo totam, reprehenderit nostrum, labore placeat saepe recusandae, minima animi! Molestiae optio ad, dolores fuga maiores provident consectetur dolorum eius in accusantium libero a quae adipisci iure, quas sint iste aliquid vel! Neque sint quisquam ad alias minus quis assumenda, eum amet laboriosam id! Impedit expedita similique sapiente quam itaque nihil iusto autem recusandae, dicta aliquid ex magnam ratione, nesciunt consequuntur obcaecati, dolor magni labore accusamus a porro provident totam dignissimos soluta. Perferendis delectus neque nobis laborum repellendus incidunt qui at aspernatur voluptates fugiat officia, error eum sapiente ullam. Cumque quam laboriosam quos, eum numquam esse repellendus quasi fuga id fugit ab, architecto voluptatem sequi dolores sapiente itaque cupiditate, non nostrum expedita odit eligendi doloribus praesentium. Cupiditate at est quod laboriosam sint magnam, architecto perspiciatis neque obcaecati laborum, dolores excepturi unde saepe praesentium accusantium ratione consequatur doloribus maiores commodi ad corrupti doloremque. Excepturi iste aperiam commodi asperiores ipsam nesciunt dolores soluta ex perferendis adipisci voluptatum beatae molestias impedit repellat, error quis ipsum optio incidunt cumque? Illo voluptates eligendi nisi cum sunt. Tempore officiis ex itaque numquam ratione non dolore explicabo sequi, praesentium, illum eaque quibusdam repellendus aperiam accusamus architecto veniam? Dolore illo quidem corrupti vero, quas, maxime pariatur vel aspernatur facere iure tempore assumenda voluptatem magnam sint accusantium. Saepe, perspiciatis, repudiandae cupiditate sapiente incidunt exercitationem dolores eveniet facere reprehenderit alias, harum itaque modi aspernatur autem a possimus consectetur atque velit temporibus ducimus. Magnam excepturi sed soluta voluptatum voluptates vel enim hic, iusto aliquid veniam, ratione vitae accusamus fuga, beatae est sint! Perferendis libero soluta eius. Nostrum odio laudantium officia nesciunt quae quisquam fugit fugiat minus asperiores deleniti ut doloribus dolorum facilis, expedita reprehenderit, perspiciatis impedit provident blanditiis sequi perferendis ratione. Quis vero, sunt nulla perferendis quod aut voluptatibus eaque iure ea nisi doloremque pariatur quo soluta magni beatae et, ut tenetur veniam libero eos suscipit recusandae itaque. Libero optio accusantium amet a. Earum, necessitatibus. Alias eius adipisci ab et ut quidem illo aperiam aut soluta, autem labore corporis dolorem, molestiae, a dolor doloribus voluptates quibusdam odit nisi maiores similique. Dolor nam sint voluptatibus eius recusandae excepturi odio. Autem, sunt nostrum necessitatibus corporis, facere nulla a iusto quod voluptate laudantium commodi labore sit adipisci tenetur delectus ratione optio quas! Quasi?
+              </p>
+              
+            </div>
+        </>
+
+    );
+};
+
+export default CompanyDetails;

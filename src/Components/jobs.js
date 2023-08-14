@@ -2,9 +2,11 @@ import React from 'react';
 import { MdLocationPin } from 'react-icons/md'
 import { AiOutlineMail } from 'react-icons/ai'
 import { BsFillTelephoneFill } from 'react-icons/bs'
+import { Link } from 'react-router-dom';
 
 
 const jobs = ({ title, companyName, companyLogo, location, email, phoneNumber }) => {
+    const id='02'
     return (
         <div>
             <div className='p-4 mt-8 border rounded-md shadow-sm bg-gray-800 text-white hover:bg-gray-900 duration-1000 transition '>
@@ -26,7 +28,7 @@ const jobs = ({ title, companyName, companyLogo, location, email, phoneNumber })
                     <BsFillTelephoneFill size={24} className='text-green-600' />
                     {phoneNumber}
                 </h4>
-                <button className='mt-4 px-4 py-3 bg-green-800 hover:opacity-75 transition-colors font-semibold text-white rounded-full w-full'>Apply</button>
+                <Link to={`/jobdetails/${id}`}><button  className='mt-4 px-4 py-3 bg-green-800 hover:opacity-75 transition-colors font-semibold text-white rounded-full w-full'>Apply</button></Link>
             </div>
         </div>
     );

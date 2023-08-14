@@ -7,7 +7,7 @@ import { toast } from 'react-hot-toast';
 
 const Login = () => {
     const { user, loginUserWithEmail } = useContext(userAuth)
-    const [loader,setLoader]=useState(false)
+    const [loader, setLoader] = useState(false)
 
     const handelsubmit = (event) => {
         setLoader(true)
@@ -41,7 +41,7 @@ const Login = () => {
                     <input name='password' className='outline-none w-full px-8 focus:outline-none border-b-black border-b-2' placeholder='Your password' type='password' />
                 </div>
                 <button className='w-full rounded-full border px-4 py-2 bg-green-600 hover:opacity-75 transition text-white font-semibold'>{
-                    loader ? 'Please Wait':'Login'
+                    loader ? 'Please Wait' : 'Login'
                 }</button>
             </form>
             <div>

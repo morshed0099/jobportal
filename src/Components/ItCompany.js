@@ -3,9 +3,11 @@ import React from 'react';
 import { BsFacebook, BsLinkedin, BsTwitter, BsYoutube } from 'react-icons/bs'
 import { Link } from 'react-router-dom';
 
+
 const ItCompany = ({imagesrc,companyName,description,twitter,youtube,facebook,linkedin}) => {
-    return (
    
+    const id="03"
+    return (   
             <div>              
                 <div className='mt-8 border shadow-md rounded-e-md p-4'>
                     <div>
@@ -22,20 +24,20 @@ const ItCompany = ({imagesrc,companyName,description,twitter,youtube,facebook,li
                         </p>
                     </div>
                     <div>
-                        <h5 className='text-1xl mt-4 text-center font-semibold'>Follw us</h5>
+                       <Link to={`/companydetails/${id}`}> <h5 className='text-1xl mt-4 text-center text-green-600 cursor-pointer font-semibold'>More ...</h5></Link>
                     </div>
                     <div className='flex justify-center gap-4 mt-4'>
                         <Link to='#'>
-                            <BsTwitter className='w-8 h-8 bg-white hover:text-green-600 duration-1000 transition shadow-md rounded-full p-2' size={24} />
+                            <BsTwitter className='w-8 h-8 bg-white hover:text-green-600 duration-1000 transition shadow-md rounded-full p-1' size={34} />
                         </Link>
                         <Link to='#'>
-                            <BsYoutube className='w-8 h-8 bg-white hover:text-green-600 duration-1000 transition shadow-md rounded-full p-2' size={24} />
+                            <BsYoutube className='w-8 h-8 bg-white hover:text-green-600 duration-1000 transition shadow-md rounded-full p-1' size={34} />
                         </Link>
                         <Link to='#'>
-                            <BsFacebook className='w-8 h-8 bg-white hover:text-green-600 duration-1000 transition shadow-md rounded-full p-2' size={24} />
+                            <BsFacebook className='w-8 h-8 bg-white hover:text-green-600 duration-1000 transition shadow-md rounded-full p-1' size={34} />
                         </Link>
                         <Link>
-                            <BsLinkedin className='w-8 h-8 bg-white hover:text-green-600 duration-1000 transition shadow-md rounded-full p-2' size={24} />
+                            <BsLinkedin className='w-8 h-8 bg-white hover:text-green-600 duration-1000 transition shadow-md rounded-full p-1' size={34} />
                         </Link>
                     </div>
                 </div>
