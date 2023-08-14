@@ -8,7 +8,7 @@ const Navbar = () => {
 
 
     return (
-        <div className='lg:shadow-md sticky top-0 bg-white py-4'>
+        <div className='lg:shadow-md sticky top-0 py-4'>
             <nav className='container  mx-auto'>
                 <div className='hidden  lg:flex justify-between items-center '>
                     <div>
@@ -28,7 +28,7 @@ const Navbar = () => {
                     <div>
                         <GiHamburgerMenu onClick={()=>setToggle(!toggale)} size={24} color='green' className='hover:opacity-75 transition w-10 h-10 p-2 rounded-full shadow-md ' />
                     </div>
-                    <div className={`flex gap-4 flex-col duration-500 ease-linear  py-8 left-0  w-full bg-gray-700  z-50 items-center absolute ${ !toggale ? "top-[-300px] h-[0px]":'top-[0px] min-h-full' }`}>
+                    <div className={`flex gap-4 flex-col duration-500 ease-linear  py-8 left-0  w-full bg-gray-700  z-50 items-center absolute ${ !toggale ? "top-[-300px]":'top-[0px] min-h-full' }`}>
                         <div>
                             <h2 className='text-2xl font-bold text-green-600'>Job Protal</h2>
                         </div>
