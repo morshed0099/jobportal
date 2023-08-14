@@ -8,7 +8,7 @@ const Navbar = () => {
 
 
     return (
-        <div className='lg:shadow-md py-4'>
+        <div className='lg:shadow-md sticky top-0 bg-white py-4'>
             <nav className='container  mx-auto'>
                 <div className='hidden  lg:flex justify-between items-center '>
                     <div>
