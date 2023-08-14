@@ -26,7 +26,7 @@ const jobs = ({ title, companyName, companyLogo, location, email, phoneNumber })
                     <BsFillTelephoneFill size={24} className='text-green-600' />
                     {phoneNumber}
                 </h4>
-                <button className='mt-4 px-4 py-3 border text-white rounded-full w-full'>Apply</button>
+                <button className='mt-4 px-4 py-3 bg-green-800 hover:opacity-75 transition-colors font-semibold text-white rounded-full w-full'>Apply</button>
             </div>
         </div>
     );
