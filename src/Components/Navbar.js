@@ -8,9 +8,9 @@ const Navbar = () => {
 
 
     return (
-        <div>
+        <div className='lg:shadow-md py-4'>
             <nav className='container  mx-auto'>
-                <div className='hidden lg:flex justify-between items-center '>
+                <div className='hidden  lg:flex justify-between items-center '>
                     <div>
                         <h2 className='text-2xl font-bold text-green-600'>Job Protal</h2>
                     </div>
@@ -21,11 +21,14 @@ const Navbar = () => {
                         <NavLink to='/signin'>SignIn</NavLink>
                     </div>
                 </div>
+
+                {/* fot small device  */}
+
                 <div className='lg:hidden block'>
                     <div>
-                        <GiHamburgerMenu onClick={()=>setToggle(!toggale)} size={24} color='green' className='hover:opacity-75 transition' />
+                        <GiHamburgerMenu onClick={()=>setToggle(!toggale)} size={24} color='green' className='hover:opacity-75 transition w-10 h-10 p-2 rounded-full shadow-md ' />
                     </div>
-                    <div className={`flex gap-4 flex-col duration-500 ease-linear  py-8  w-full bg-gray-700  z-50 items-center absolute ${ !toggale ? "top-[-300px] h-[0px]":'top-[0px] min-h-full' }`}>
+                    <div className={`flex gap-4 flex-col duration-500 ease-linear  py-8 left-0  w-full bg-gray-700  z-50 items-center absolute ${ !toggale ? "top-[-300px] h-[0px]":'top-[0px] min-h-full' }`}>
                         <div>
                             <h2 className='text-2xl font-bold text-green-600'>Job Protal</h2>
                         </div>
