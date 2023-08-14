@@ -9,12 +9,13 @@ import morshed from '../media/Images/mdgolam_morshed.jpg'
 import { AiOutlineArrowDown } from 'react-icons/ai';
 import { BsFacebook, BsGithub, BsLinkedin, BsYoutube } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
-import { MdOutlineKeyboardArrowUp } from 'react-icons/md';
+import Accordian from '../Components/Accordian';
+
 
 
 const Home = () => {
     const [activeRoute, setActiveRoute] = useState('all')
-    const [accordian,setAccordian]=useState(false)
+
 
     return (
         <>
@@ -100,7 +101,7 @@ const Home = () => {
                 <p className='font-semibold text-1xl text-center text-gray-600 '>video Resume </p>
                 <div className='flex justify-center mt-6 mb-6 items-center'>
                     <span className='move'>
-                        <AiOutlineArrowDown size={34}  />
+                        <AiOutlineArrowDown size={34} />
                     </span>
                 </div>
 
@@ -117,16 +118,23 @@ const Home = () => {
                 </div>
             </div>
             <div className='mt-14'>
-                <div>
-                    <div onClick={()=>()}  className='flex justify-between px-6 py-2 w-full border border-1'>
-                        <p className='text-1xl font-bold'>what is react</p>
-                        <MdOutlineKeyboardArrowUp size={24} />
-                    </div>
-                    <div className='px-4 py-2 bg-gray-200 '>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id ipsa quod rerum nemo natus nisi doloribus labore temporibus fuga debitis.</p>
-                    </div>
-                </div>
+                <h2 className='text-2xl font-bold mb-6'>Some Uesfull MERN stack question and answer</h2>
+            <Accordian 
+             title='What is React'
+             isactive
+             answer='Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem repellat doloribus velit et ratione quaerat porro autem quia iure quibusdam corporis, sint, animi neque quasi consectetur eveniet atque aliquid repudiandae!'
+            />
+            <Accordian 
+             title='What is React'
+             answer='Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem repellat doloribus velit et ratione quaerat porro autem quia iure quibusdam corporis, sint, animi neque quasi consectetur eveniet atque aliquid repudiandae!'
+            />
+            <Accordian 
+             title='What is React'
+             answer='Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem repellat doloribus velit et ratione quaerat porro autem quia iure quibusdam corporis, sint, animi neque quasi consectetur eveniet atque aliquid repudiandae!'
+            />
             </div>
+           
+            
         </>
     );
 };
