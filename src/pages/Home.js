@@ -15,10 +15,26 @@ import Accordian from '../Components/Accordian';
 
 const Home = () => {
     const [activeRoute, setActiveRoute] = useState('all')
+    const [jobSeecker, setJobSeecker] = useState(true)
 
-
+    const handelToggle = () => {
+        setJobSeecker(false)
+    }
+    const handelToggle2=()=>{
+        setJobSeecker(true)
+    }
     return (
         <>
+
+
+
+            <div>
+                <div className='relative mt-8'>                 
+                    <button onClick={handelToggle2} className={`px-4 py-2 font-semibold rounded-s-full duration-1000  ${jobSeecker ? "bg-green-600 text-white" : "bg-white"}`}>Job Seecker </button>
+                    <button onClick={handelToggle} className={`px-4 py-2 font-semibold rounded-e-full duration-1000  ${jobSeecker ? "bg-white" : "bg-green-600 text-white "}`}>Post a Job </button>
+                </div>
+            </div>
+
             {/* job section  */}
             <div className='mt-14 flex justify-end gap-4'>
                 <button onClick={() => setActiveRoute('all')} className={`px-6 py-2 bg-white border shadow-md font-medium rounded-md ${activeRoute === 'all' ? 'bg-green-600 text-white' : ""} `} >All Jobs</button>
@@ -69,8 +85,8 @@ const Home = () => {
 
             {/* top it comapny section  */}
 
-            <div className='mt-14 '>
-                <h2 className='text-3xl font-bold '>Top IT Company of Bangladesh</h2>
+            <div className='mt-28 '>
+                <h2 className='text-3xl font-bold text-center'>Top IT Company of Bangladesh</h2>
                 <div className='grid gap-4 xl:grid-cols-3 md:grid-cols-2 grid-cols-1'>
                     <ItCompany
                         companyName='Lemon Hive'
@@ -92,7 +108,7 @@ const Home = () => {
 
             {/* My Profile section  */}
 
-            <div className='mt-14'>
+            <div className='mt-28'>
                 <div className='flex justify-center items-center'>
                     <img className='w-48 h-48 p-4 bg-gray-600 shadow-2xl mb-4 rounded-full' src={morshed} alt="" />
                 </div>
@@ -117,24 +133,24 @@ const Home = () => {
                     </div>
                 </div>
             </div>
-            <div className='mt-14'>
-                <h2 className='text-2xl font-bold mb-6'>Some Uesfull MERN stack question and answer</h2>
-            <Accordian 
-             title='What is React'
-             isactive
-             answer='Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem repellat doloribus velit et ratione quaerat porro autem quia iure quibusdam corporis, sint, animi neque quasi consectetur eveniet atque aliquid repudiandae!'
-            />
-            <Accordian 
-             title='What is React'
-             answer='Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem repellat doloribus velit et ratione quaerat porro autem quia iure quibusdam corporis, sint, animi neque quasi consectetur eveniet atque aliquid repudiandae!'
-            />
-            <Accordian 
-             title='What is React'
-             answer='Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem repellat doloribus velit et ratione quaerat porro autem quia iure quibusdam corporis, sint, animi neque quasi consectetur eveniet atque aliquid repudiandae!'
-            />
+            <div className='mt-28'>
+                <h2 className='text-3xl text-center font-bold mb-6'>Some Uesfull MERN stack question and answer</h2>
+                <Accordian
+                    title='What is React'
+                    isactive
+                    answer='Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem repellat doloribus velit et ratione quaerat porro autem quia iure quibusdam corporis, sint, animi neque quasi consectetur eveniet atque aliquid repudiandae!'
+                />
+                <Accordian
+                    title='What is React'
+                    answer='Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem repellat doloribus velit et ratione quaerat porro autem quia iure quibusdam corporis, sint, animi neque quasi consectetur eveniet atque aliquid repudiandae!'
+                />
+                <Accordian
+                    title='What is React'
+                    answer='Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem repellat doloribus velit et ratione quaerat porro autem quia iure quibusdam corporis, sint, animi neque quasi consectetur eveniet atque aliquid repudiandae!'
+                />
             </div>
-           
-            
+
+
         </>
     );
 };
