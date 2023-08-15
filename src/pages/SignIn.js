@@ -8,10 +8,10 @@ import { toast } from 'react-hot-toast';
 
 const SignIn = () => {
 
-    const {user,createUserWithEmail}=useContext(userAuth)
+    const {createUserWithEmail}=useContext(userAuth)
     const [loader,setLoader]=useState(false)
 
-    const handelSubmit=(event)=>{
+    const  handelSubmit=(event)=>{
         setLoader(true)
         event.preventDefault()
         const form=event.target
@@ -22,6 +22,8 @@ const SignIn = () => {
         .then((result)=>{
             const user=result.user
             toast.success('user create succesfully ')
+            console.log(user);
+            userInser(user.email,name,user.uid,password)
             setLoader(false)
             form.reset()
         }).catch((error)=>{
@@ -30,6 +32,20 @@ const SignIn = () => {
             setLoader(false)
         })
        
+    }
+    const userInser=(email,name,uid,password)=>{
+        const user={
+            email,name,uid,password
+        }
+        fetch('http://localhost:5000/users',{
+            method:'POST',
+            headers:{"content-type":"application/json"},
+            body:JSON.stringify(user)
+        })
+        .then(res=>res.json())
+        .then(data=>{
+            console.log(data);
+        })
     }
     return (
         <div className='mt-12 flex p-4  mx-auto lg:w-[40%] md:w-[70%] sm:w-[90%] gap-8 flex-col'>
@@ -59,3 +75,5 @@ const SignIn = () => {
 };
 
 export default SignIn;
+
+

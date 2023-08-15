@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import lemonhive from '../media/Images/lemon-hive.jpeg'
 import mediaus from '../media/Images/mediaus ware.jpeg'
 import ItCompany from '../Components/ItCompany';
-import Jobs from '../Components/jobs'
+import Jobs from '../Components/Jobs'
 import meta from '../media/Images/meta.png';
 import ReactPlayer from 'react-player';
 import morshed from '../media/Images/mdgolam_morshed.jpg'
@@ -17,6 +17,8 @@ import { Link } from 'react-router-dom';
 const Home = () => {
     const [activeRoute, setActiveRoute] = useState('all')
     const [jobSeecker, setJobSeecker] = useState(true)
+    const [category, setCategory] = useState([])
+    const [alljob,setAlljob]=useState([])
 
     const handelToggle = () => {
         setJobSeecker(false)
@@ -24,6 +26,25 @@ const Home = () => {
     const handelToggle2 = () => {
         setJobSeecker(true)
     }
+
+    useEffect(() => {
+        fetch('http://localhost:5000/category')
+            .then(res => res.json())
+            .then(data => {
+                setCategory(data)
+            })
+    }, [])
+
+    useEffect(()=>{
+        fetch(`http://localhost:5000/jobs`)
+        .then(res=>res.json())
+        .then(data=>setAlljob(data))
+    },[])
+    const handelCategory = (e) => {
+        setActiveRoute(e.target.value)
+
+    }
+    console.log(activeRoute);
     return (
         <>
             <div className='relative' style={{
@@ -51,58 +72,29 @@ const Home = () => {
             </div>
             <div className='container mx-auto'>
 
-                {/* job section  */}
-              
-                    <>
-                        <div className='mt-14  flex justify-end gap-4'>
-                            <button onClick={() => setActiveRoute('all')} className={`px-6 py-2 bg-white border shadow-md font-medium rounded-md ${activeRoute === 'all' ? 'bg-green-600 text-white' : ""} `} >All Jobs</button>
-                            <button onClick={() => setActiveRoute('fresher')} className={`px-6 py-2 bg-white border shadow-md font-medium rounded-md ${activeRoute === 'fresher' && 'bg-green-600 text-white'} `} >Fresher Jobs</button>
-                            <button onClick={() => setActiveRoute('experience')} className={`px-6 py-2 bg-white border shadow-md  font-medium rounded-md ${activeRoute === 'experience' && 'bg-green-600 text-white'} `}  >Experience Jobs</button>
-                        </div>
-                        <div>
-                            {activeRoute === 'all' && (
-                                <div className='grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4'>
-                                    <Jobs
-                                        companyLogo={meta}
-                                        companyName='Meta Ltd.'
-                                        email='meta@gmail.com'
-                                        location='New York,America'
-                                        phoneNumber='+8801991394353'
-                                        title='Reactjs Developer'
-                                    />
-                                    <Jobs
-                                        companyLogo={meta}
-                                        companyName='Meta Ltd.'
-                                        email='meta@gmail.com'
-                                        location='New York,America'
-                                        phoneNumber='+8801991394353'
-                                        title='Reactjs Developer'
-                                    />
-                                    <Jobs
-                                        companyLogo={meta}
-                                        companyName='Meta Ltd.'
-                                        email='meta@gmail.com'
-                                        location='New York,America'
-                                        phoneNumber='+8801991394353'
-                                        title='Reactjs Developer'
-                                    />
+                {/* category buton  */}
 
-                                </div>
-                            )}
-                            {activeRoute === 'fresher' && (
-                                <div>
-                                    fresher
-                                </div>
-                            )}
-                            {activeRoute === 'experience' && (
-                                <div>
-                                    experience
-                                </div>
-                            )}
-                        </div>
-                    </>
-           
-           
+                <div className='flex justify-end gap-4 mt-14'>
+                    {
+                        category.map(cat => <button onClick={(e) => handelCategory(e)} className={`${activeRoute === cat.categoryName ? "px-4 py-3 bg-green-500 rounded-2xl text-white font-bold" : "px-4 border  py-3 rounded-2xl bg-white font-bold"}`} value={cat.categoryName}>{cat.categoryName}</button>)
+                    }
+                </div>
+
+                  {/* all jobs          */}
+
+                        {
+                            alljob.map(job=><Jobs
+                            companyLogo={job.logo}
+                            companyName={job.conpanyName}
+                            email={job.email}
+                            location={job.location}
+                            title={job.jobTitle}
+                            phoneNumber={job.phoneNumber}
+                            >
+
+                            </Jobs>)
+                        }
+
                 {/* top it comapny section  */}
 
                 <div className='mt-28 '>

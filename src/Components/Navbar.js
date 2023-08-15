@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { GiHamburgerMenu } from 'react-icons/gi'
+import { userAuth } from '../AuthProvider/AuthProvider';
 
 const Navbar = () => {
     const [toggale, setToggle] = useState(false)
-
+    const {user}=useContext(userAuth)
 
 
     return (
@@ -14,11 +15,15 @@ const Navbar = () => {
                     <div>
                         <h2 className='text-2xl font-bold text-green-600'>Job Protal</h2>
                     </div>
-                    <div className='flex flex-row gap-4'>
-                        <NavLink className={`isactive ?"active":"" `} to='/'>Home</NavLink>
-                        <NavLink to='/about'>About Us</NavLink>
-                        <NavLink  to='/contact '>Contact Us</NavLink>
-                        <NavLink  to='/signin'>SignIn</NavLink>
+                    <div className='flex flex-row mt-4 gap-4'>
+                        <NavLink className={` isactive ?"active":" hover:text-green-600 " `} to='/'>Home</NavLink>
+                        <NavLink className={` isactive ?"active":" hover:text-green-600 " `} to='/about'>About Us</NavLink>
+                        <NavLink className={` isactive ?"active":" hover:text-green-600 " `}  to='/contact '>Contact Us</NavLink>
+                        {
+                            user ? <button className='bg-white shadow-sm p-2 rounded-2xl mt-[-9px] hover:shadow-md'>Logout</button>
+                            :
+                            <NavLink  to='/signin'>SignIn</NavLink>
+                        }
                     </div>
                 </div>
 

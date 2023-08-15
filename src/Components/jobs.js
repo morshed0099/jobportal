@@ -5,7 +5,7 @@ import { BsFillTelephoneFill } from 'react-icons/bs'
 import { Link } from 'react-router-dom';
 
 
-const jobs = ({ title, companyName, companyLogo, location, email, phoneNumber }) => {
+const Jobs = ({ title, companyName, companyLogo, location, email, phoneNumber }) => {
     const id='02'
     return (
         <div>
@@ -34,4 +34,4 @@ const jobs = ({ title, companyName, companyLogo, location, email, phoneNumber })
     );
 };
 
-export default jobs;
+export default Jobs;
