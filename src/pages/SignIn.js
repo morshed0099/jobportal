@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import { CgProfile } from 'react-icons/cg'
 import { AiOutlineMail } from 'react-icons/ai'
 import { RiLockPasswordFill } from 'react-icons/ri'
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { userAuth } from '../AuthProvider/AuthProvider';
 import { toast } from 'react-hot-toast';
 
@@ -10,7 +10,9 @@ const SignIn = () => {
 
     const {createUserWithEmail}=useContext(userAuth)
     const [loader,setLoader]=useState(false)
-
+    let navigate = useNavigate();
+    let location = useLocation();
+    const from = location.state?.from?.pathname || "/";
     const  handelSubmit=(event)=>{
         setLoader(true)
         event.preventDefault()
@@ -45,6 +47,8 @@ const SignIn = () => {
         .then(res=>res.json())
         .then(data=>{
             console.log(data);
+            navigate(from, { replace: true });
+
         })
     }
     return (

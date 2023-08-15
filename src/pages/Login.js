@@ -1,14 +1,16 @@
 import React, { useContext, useState } from 'react';
 import { AiOutlineMail } from 'react-icons/ai'
 import { RiLockPasswordFill } from 'react-icons/ri'
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { userAuth } from '../AuthProvider/AuthProvider';
 import { toast } from 'react-hot-toast';
 
 const Login = () => {
     const { user, loginUserWithEmail } = useContext(userAuth)
     const [loader, setLoader] = useState(false)
-
+    let navigate = useNavigate();
+    let location = useLocation();
+    const from = location.state?.from?.pathname || "/";
     const handelsubmit = (event) => {
         setLoader(true)
         event.preventDefault()
@@ -21,6 +23,8 @@ const Login = () => {
                 toast.success('login successfully !!')
                 form.reset()
                 setLoader(false)
+                navigate(from, { replace: true });
+
             }).catch((error) => {
                 console.log(error)
                 toast.error(error.message)

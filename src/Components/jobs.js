@@ -5,8 +5,8 @@ import { BsFillTelephoneFill } from 'react-icons/bs'
 import { Link } from 'react-router-dom';
 
 
-const Jobs = ({ title, companyName, companyLogo, location, email, phoneNumber }) => {
-    const id='02'
+const Jobs = ({ title, companyName, companyLogo, location, email, phoneNumber,id }) => {
+  
     return (
         <div>
             <div className='p-4 mt-8 border rounded-md shadow-sm bg-gray-800 text-white hover:bg-gray-900 duration-1000 transition '>
@@ -28,8 +28,9 @@ const Jobs = ({ title, companyName, companyLogo, location, email, phoneNumber })
                     <BsFillTelephoneFill size={24} className='text-green-600' />
                     {phoneNumber}
                 </h4>
-                <Link to={`/jobdetails/${id}`}><button  className='mt-4 px-4 py-3 bg-green-800 hover:opacity-75 transition-colors font-semibold text-white rounded-full w-full'>Apply</button></Link>
+                <Link to={`/jobdetails/${id}`}><button className='mt-4 px-4 py-3 bg-green-800 hover:opacity-75 transition-colors font-semibold text-white rounded-full w-full'>Apply</button></Link>
             </div>
+            
         </div>
     );
 };
