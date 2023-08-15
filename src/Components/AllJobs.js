@@ -7,7 +7,7 @@ const AllJobs = () => {
     const [alljob, setAlljob] = useState([])
     const [loader, setLoader] = useState(false)
     useEffect(() => {
-        fetch('http://localhost:5000/category')
+        fetch('https://jobportal-sarver.vercel.app/category')
             .then(res => res.json())
             .then(data => {
                 setCategory(data)
@@ -16,7 +16,7 @@ const AllJobs = () => {
 
     useEffect(() => {
         setLoader(true)
-        fetch(`http://localhost:5000/alljobs/?categoyname=${activeRoute}`)
+        fetch(`https://jobportal-sarver.vercel.app/alljobs/?categoyname=${activeRoute}`)
             .then(res => res.json())
             .then(data => {
                 setAlljob(data)

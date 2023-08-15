@@ -15,7 +15,7 @@ const PostAjob = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/category')
+        fetch('https://jobportal-sarver.vercel.app/category')
             .then(res => res.json())
             .then(data => {
                 setCat(data)
@@ -67,7 +67,7 @@ const PostAjob = () => {
                     userEmail: user?.email,
                     userName: user?.name,
                 }
-                fetch('http://localhost:5000/jobs', {
+                fetch('https://jobportal-sarver.vercel.app/jobs', {
                     method: 'POST',
                     headers: { "content-type": "application/json" },
                     body: JSON.stringify(job)

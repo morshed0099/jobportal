@@ -39,7 +39,7 @@ const SignIn = () => {
         const user={
             email,name,uid,password
         }
-        fetch('http://localhost:5000/users',{
+        fetch('https://jobportal-sarver.vercel.app/users',{
             method:'POST',
             headers:{"content-type":"application/json"},
             body:JSON.stringify(user)

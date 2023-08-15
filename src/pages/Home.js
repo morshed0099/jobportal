@@ -31,7 +31,7 @@ const Home = () => {
     }
 
     useEffect(() => {
-        fetch('http://localhost:5000/category')
+        fetch('https://jobportal-sarver.vercel.app/category')
             .then(res => res.json())
             .then(data => {
                 setCategory(data)
@@ -40,7 +40,7 @@ const Home = () => {
 
     useEffect(() => {
         setLoader(true)
-        fetch(`http://localhost:5000/jobs/?categoyname=${activeRoute}`)
+        fetch(`https://jobportal-sarver.vercel.app/jobs/?categoyname=${activeRoute}`)
             .then(res => res.json())
             .then(data => {
                 setAlljob(data)
@@ -49,7 +49,7 @@ const Home = () => {
     }, [activeRoute])
 
     useEffect(() => {
-        fetch('http://localhost:5000/it')
+        fetch('https://jobportal-sarver.vercel.app/it')
             .then(res => res.json())
             .then(data => setIt(data))
     }, [])
@@ -71,11 +71,11 @@ const Home = () => {
 
             }}>
                 <div className='absolute w-full h-full bg-black bg-opacity-75'></div>
-                <div className='flex justify-center top-4 lg:top-56 items-center relative '>
+                <div className='flex justify-center top-12 lg:top-56 items-center relative '>
                     <button onClick={handelToggle2} className={` px-8 py-4  font-semibold rounded-s-full lg:text-2xl text-1xl duration-1000 border ${jobSeecker ? "bg-green-600 text-white" : "text-white"}`}>Job Seecker </button>
                     <Link to='/postajob'><button onClick={handelToggle} className={`px-8 py-4  font-semibold rounded-e-full duration-1000 border lg:text-2xl text-1xl  ${jobSeecker ? "text-white" : "bg-green-600 text-white "}`}>Post a Job </button></Link>
                 </div>
-                <div className='flex flex-col justify-center mt-5 top-4 lg:top-64 items-center relative '>
+                <div className='flex flex-col justify-center mt-5 top-12 lg:top-64 items-center relative '>
                     <p className='text-white'>Job portal is a side for find your drem job</p>
                     <p className='text-green-600 font-bold mt-4 text-2xl '>Connented With Us</p>
                     <div className='flex mt-8  gap-4 '>
@@ -123,7 +123,7 @@ const Home = () => {
 
                 <div className='mt-28 '>
                     <h2 className='text-3xl font-bold text-center'>Top IT Company of Bangladesh</h2>
-                    <div className='grid gap-4 xl:grid-cols-3 md:grid-cols-2 grid-cols-1'>
+                    <div className='grid gap-4 xl:grid-cols-3 lg:grid-cols-3 md:grid-cols-2 grid-cols-1'>
 
                         {
                             it.map(i => <ItCompany
@@ -231,13 +231,12 @@ const Home = () => {
                     />
                     <Accordian
                         title='Expalin event loop'
-                        answer='
-                        
-The event loop is a fundamental concept in asynchronous programming, particularly in environments like Node.js or web browsers, where non-blocking I/O operations are prevalent. Its the mechanism that allows a single-threaded program to handle multiple concurrent operations without getting blocked or slowed down by waiting for individual tasks to complete.'
+                        answer='                        
+                        The event loop is a fundamental concept in asynchronous programming, particularly in environments like Node.js or web browsers, where non-blocking I/O operations are prevalent. Its the mechanism that allows a single-threaded program to handle multiple concurrent operations without getting blocked or slowed down by waiting for individual tasks to complete.'
                     />
                     <Accordian
                         title='How does react work'
-                        answer=' React simplifies the process of building UIs by providing a structured approach, efficient updates through the virtual DOM, and a focus on reusable components. Its architecture promotes a clear separation of concerns and enhances the development of interactive and dynamic web applications'
+                        answer='React simplifies the process of building UIs by providing a structured approach, efficient updates through the virtual DOM, and a focus on reusable components. Its architecture promotes a clear separation of concerns and enhances the development of interactive and dynamic web applications'
                     />
                 </div>
 

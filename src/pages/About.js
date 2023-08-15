@@ -25,9 +25,9 @@ const About = () => {
 
                 <div>
                     <h2 className='text-2xl font-bold text-center mt-12 mb-4 '> Meet Our Ceo </h2>
-                    <div className='flex lg:flex-row gap-4 lg:items-center flex-col p-4 '>
+                    <div className='grid xl:grid-cols-2 lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-6 p-4'>
                         <div className='w-full lg:W-1/2'>
-                            <img className='rounded-2xl' src={morserd} alt="" />
+                            <img className='rounded-2xl md:mt-0 lg:mt-[-60px]' src={morserd} alt="" />
                         </div>
                         <div className='lg:w-full '>
                             <h4>
