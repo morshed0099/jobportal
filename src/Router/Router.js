@@ -49,9 +49,9 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/companydetails/:id',
-                // loader: ({ params }) => {
-                //     return fetch(`http://localhost:5000/company/details/${params.id}`)
-                // },
+                loader: ({ params }) => {
+                    return fetch(`http://localhost:5000/it/${params.id}`)
+                },
                 element: <CompanyDetails /> 
             },
             {
