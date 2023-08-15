@@ -45,7 +45,7 @@ export const router = createBrowserRouter([
                 loader: ({ params }) => {
                     return fetch(`https://jobportal-sarver.vercel.app/jobdetails/${params.id}`)
                 },
-                element: <PrivateRoute><JobDetails /></PrivateRoute>,
+                element: <PrivateRoute><JobDetails/></PrivateRoute>,
             },
             {
                 path: '/companydetails/:id',

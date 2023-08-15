@@ -9,7 +9,7 @@ const Jobs = ({ title, companyName, companyLogo, location, email, phoneNumber,id
   
     return (
         <div>
-            <div className='p-4 mt-8 border hover:scale-105 duration-700 rounded-md shadow-sm text-black  transition '>
+            <div data-aos="fade-up" className='p-4 mt-8 border hover:scale-105 duration-700 rounded-md shadow-sm text-black  transition '>
 
                 <div className='flex items-center gap-4 '>
                     <h4 className='2xl font-semibold'>{companyName}</h4>

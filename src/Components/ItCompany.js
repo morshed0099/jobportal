@@ -6,7 +6,7 @@ const ItCompany = ({imagesrc,companyName,description,id}) => {
 
     return (   
             <div>              
-                <div className='mt-8 border hover:scale-105 duration-700 shadow-md rounded-e-md p-4'>
+                <div data-aos="fade-up" className='mt-8 border hover:scale-105 duration-700 shadow-md rounded-e-md p-4'>
                     <div>
                         <img  src={imagesrc} className='rounded-md w-full h-[300px]' alt="" />
                     </div>

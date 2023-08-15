@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Projects = ({ image, descripion, link1, link2 }) => {
     return (
-        <div className='p-4 border shadow-sm rounded-md hover:scale-105 duration-700 m-2'>
+        <div data-aos="fade-up" className='p-4 border shadow-sm rounded-md hover:scale-105 duration-700 m-2'>
             <div>
                 <img className='w-full h-[400px]' src={image} alt="" />
             </div>

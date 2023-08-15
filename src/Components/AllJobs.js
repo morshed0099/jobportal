@@ -30,7 +30,7 @@ const AllJobs = () => {
     return (
         <div className='container mx-auto'>
 
-            <h2 className='text-2xl font-bold mt-14 mb-4'>All Jobs </h2>
+            <h2 data-aos="fade-up" className='text-2xl font-bold mt-14 mb-4'>All Jobs </h2>
            
             <div className='flex justify-end gap-4 mt-14'>
                 {

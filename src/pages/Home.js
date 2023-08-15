@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import lemonhive from '../media/Images/lemon-hive.jpeg'
-import mediaus from '../media/Images/mediaus ware.jpeg'
+
+
 import ItCompany from '../Components/ItCompany';
 import Jobs from '../Components/Jobs'
-import meta from '../media/Images/meta.png';
+
 import ReactPlayer from 'react-player';
 import morshed from '../media/Images/mdgolam_morshed.jpg'
 import { AiOutlineArrowDown } from 'react-icons/ai';
@@ -71,14 +71,14 @@ const Home = () => {
 
             }}>
                 <div className='absolute w-full h-full bg-black bg-opacity-75'></div>
-                <div className='flex justify-center top-12 lg:top-56 items-center relative '>
-                    <button onClick={handelToggle2} className={` px-8 py-4  font-semibold rounded-s-full lg:text-2xl text-1xl duration-1000 border ${jobSeecker ? "bg-green-600 text-white" : "text-white"}`}>Job Seecker </button>
-                    <Link to='/postajob'><button onClick={handelToggle} className={`px-8 py-4  font-semibold rounded-e-full duration-1000 border lg:text-2xl text-1xl  ${jobSeecker ? "text-white" : "bg-green-600 text-white "}`}>Post a Job </button></Link>
+                <div  className='flex justify-center top-12 lg:top-56 items-center relative '>
+                    <button data-aos="fade-up" onClick={handelToggle2} className={` px-8 py-4  font-semibold rounded-s-full lg:text-2xl text-1xl  hover:bg-green-600    duration-1000 border ${jobSeecker ? "bg-green-600 text-white" : "text-white"}`}>Job Seecker </button>
+                    <Link to='/postajob'><button onClick={handelToggle} className={`px-8 py-4  font-semibold rounded-e-full duration-1000 border lg:text-2xl text-1xl hover:bg-green-600   ${jobSeecker ? "text-white" : "bg-green-600 text-white "}`}>Post a Job </button></Link>
                 </div>
                 <div className='flex flex-col justify-center mt-5 top-12 lg:top-64 items-center relative '>
                     <p className='text-white'>Job portal is a side for find your drem job</p>
                     <p className='text-green-600 font-bold mt-4 text-2xl '>Connented With Us</p>
-                    <div className='flex mt-8  gap-4 '>
+                    <div data-aos="fade-up" className='flex mt-8  gap-4 '>
                         <SocialMediaLink />
                     </div>
                 </div>
@@ -102,7 +102,7 @@ const Home = () => {
                         loader && <h1 className='text-2xl mt-8 font-bold text-green-500 text-center'>Please wait </h1>
                     }
                     {
-                        alljob.map(job => <Jobs
+                        alljob.map(job => <Jobs 
                             companyLogo={job.logo}
                             companyName={job.conpanyName}
                             email={job.email}
@@ -141,7 +141,7 @@ const Home = () => {
 
                 {/* My Profile section  */}
 
-                <div className='mt-28'>
+                <div data-aos="fade-up" className='mt-28'>
                     <div className='flex justify-center items-center'>
                         <img className='w-48 h-48 p-4 bg-gray-600 shadow-2xl mb-4 rounded-full' src={morshed} alt="" />
                     </div>
@@ -150,7 +150,7 @@ const Home = () => {
                     <p className='font-semibold text-1xl text-center text-gray-600 '>video Resume </p>
 
                     {/* social media link for small device  */}
-                    <div className='lg:hidden gap-4 justify-center items-center mt-4 flex flex-row'>
+                    <div data-aos="fade-up" className='lg:hidden gap-4 justify-center items-center mt-4 flex flex-row'>
                         <SocialMediaLink />
                     </div>
                     <div className='flex justify-center mt-6 mb-6 items-center'>
