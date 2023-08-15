@@ -8,6 +8,7 @@ import Login from "../pages/Login";
 import JobDetails from "../pages/JobDetails";
 import PrivateRoute from "./PrivateRoute";
 import CompanyDetails from "../pages/CompanyDetails";
+import PostAjob from "../Components/PostAjob";
 
 export const router = createBrowserRouter([
     {
@@ -47,6 +48,10 @@ export const router = createBrowserRouter([
                 //     return fetch(`http://localhost:5000/company/details/${params.id}`)
                 // },
                 element: <CompanyDetails /> 
+            },
+            {
+                path:'/postajob',
+                element:<PostAjob />,
             }
         ]
     }
